@@ -12,6 +12,7 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 - Uitrusting van de RS3: RS Torque Rear met drift mode, Matrix LED, virtual cockpit plus
 
 ### Gewijzigd
+- Lettertype Montserrat zelf gehost: geen verbinding meer met Google Fonts
 - Logo's in header, reserveringsblok en footer groter
 - Autofoto's tijdelijk vervangen door een merkvisual tot de professionele foto's er zijn
 - Ruimer ontwerp: bredere pagina, grotere letters en tussenruimtes die meegroeien met het scherm
