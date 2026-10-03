@@ -3,6 +3,7 @@
  * - mobiele navigatie
  * - header-rand bij scrollen
  * - actueel jaartal in de footer
+ * - rustig inkomen van blokken bij scrollen
  */
 (function () {
   "use strict";
@@ -38,6 +39,22 @@
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+  }
+
+  // Blokken met data-reveal komen in beeld zodra ze het scherm binnenschuiven.
+  // Zonder IntersectionObserver blijft alles gewoon zichtbaar (geen .js-klasse).
+  if ("IntersectionObserver" in window) {
+    document.documentElement.classList.add("js");
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll("[data-reveal]").forEach(function (el) {
+      observer.observe(el);
+    });
   }
 
   var year = document.querySelector("[data-year]");
