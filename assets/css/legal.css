@@ -1,0 +1,38 @@
+/* Juridische pagina's (privacyverklaring): rustige leeskolom in de huisstijl */
+.legal { padding-block: var(--space-6) var(--space-7); background: var(--c-white); }
+.legal__inner { display: grid; gap: var(--space-5); }
+.legal__head { display: grid; gap: var(--space-3); max-width: 46rem; }
+.legal__date { font-size: var(--fs-300); color: var(--c-steel); }
+
+.legal__body { display: grid; gap: var(--space-5); max-width: 46rem; }
+.legal__body section { display: grid; gap: var(--space-2); }
+.legal__body h2 { font-size: var(--fs-600); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; color: var(--c-navy); }
+.legal__body p, .legal__body li { color: var(--c-text-muted); }
+.legal__body ul { display: grid; gap: 0.4rem; padding-left: 1.2rem; }
+.legal__body strong { color: var(--c-navy-ink); }
+.legal__body a { color: var(--c-navy); font-weight: 600; }
+
+.legal__card {
+  display: grid;
+  gap: 0.5rem;
+  margin: var(--space-1) 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-m);
+  background: var(--c-mist);
+}
+.legal__card div { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: var(--space-2); }
+.legal__card dt { font-size: var(--fs-300); color: var(--c-text-muted); }
+.legal__card dd { margin: 0; font-weight: 600; color: var(--c-navy-ink); overflow-wrap: anywhere; }
+
+/* Tabellen scrollen binnen hun eigen kader op smalle schermen */
+.legal__table { overflow-x: auto; margin: var(--space-1) 0; border: 1px solid var(--c-line); border-radius: var(--radius-m); }
+.legal__table table { width: 100%; min-width: 36rem; border-collapse: collapse; font-size: var(--fs-300); }
+.legal__table th, .legal__table td { padding: 0.75rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--c-line); }
+.legal__table tr:last-child td { border-bottom: 0; }
+.legal__table th { font-weight: 600; color: var(--c-navy); background: var(--c-mist); }
+.legal__table td { color: var(--c-text-muted); }
+.legal__table td:first-child { font-weight: 600; color: var(--c-navy-ink); }
+
+@media (max-width: 30rem) {
+  .legal__card div { grid-template-columns: 1fr; gap: 0; }
+}
