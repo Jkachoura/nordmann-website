@@ -17,7 +17,7 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 - Hero met kop over de volle breedte en een brede "showroomvloer" voor de RS3
 - Pijlers in een eigen sectie; wagenpark als productpagina met meescrollend beeld
 - Sectiekoppen met label, omlijnde stapnummers en rustige animaties bij het scrollen
-- Reserveren: wazige marmerfoto vervangen door een scherpe CSS-achtergrond met krijtstreep en merkstrepen
+- Reserveren en de tijdelijke RS3-visuals: wazige marmerfoto vervangen door een scherpe CSS-achtergrond met krijtstreep en merkstrepen
 
 ## [1.0.0] - 2026-10-03
 
