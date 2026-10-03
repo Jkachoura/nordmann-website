@@ -1,0 +1,77 @@
+/* Header en navigatie */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(1.4) blur(10px);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.site-header.is-scrolled { border-bottom-color: var(--c-line); }
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+}
+
+.brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.brand__mark { width: auto; height: 2.5rem; }
+.brand__word { width: auto; height: 1.6rem; }
+
+.site-nav { display: flex; align-items: center; gap: var(--space-4); }
+.site-nav__list { display: flex; gap: var(--space-4); }
+.site-nav__list a {
+  font-size: var(--fs-300);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--c-navy-ink);
+  padding-block: 0.4rem;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.2s;
+}
+.site-nav__list a:hover { border-bottom-color: var(--c-navy); }
+
+.nav-toggle {
+  display: none;
+  width: 2.75rem; height: 2.75rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.nav-toggle__bar {
+  display: block;
+  width: 1.5rem; height: 2px;
+  margin: 0.4rem auto;
+  background: var(--c-navy);
+  transition: transform 0.25s var(--ease);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:first-child { transform: translateY(5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) { transform: translateY(-5px) rotate(-45deg); }
+
+@media (max-width: 52rem) {
+  .brand__word { height: 1.3rem; }
+  .nav-toggle { display: block; }
+  .site-nav {
+    position: absolute;
+    inset: 100% 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+    padding: var(--space-3) 1.25rem var(--space-4);
+    background: var(--c-white);
+    border-bottom: 1px solid var(--c-line);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition: opacity 0.2s, transform 0.2s var(--ease), visibility 0.2s;
+  }
+  .site-nav.is-open { visibility: visible; opacity: 1; transform: none; }
+  .site-nav__list { flex-direction: column; gap: 0; }
+  .site-nav__list a { display: block; padding-block: 0.9rem; font-size: var(--fs-500); border-bottom: 1px solid var(--c-line); }
+}
