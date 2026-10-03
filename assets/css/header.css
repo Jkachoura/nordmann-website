@@ -19,9 +19,9 @@
   height: var(--header-h);
 }
 
-.brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-.brand__mark { width: auto; height: 2.5rem; }
-.brand__word { width: auto; height: 1.6rem; }
+.brand { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
+.brand__mark { width: auto; height: 3.25rem; }
+.brand__word { width: auto; height: 2.1rem; }
 
 .site-nav { display: flex; align-items: center; gap: var(--space-4); }
 .site-nav__list { display: flex; gap: var(--space-4); }
@@ -55,7 +55,8 @@
 .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) { transform: translateY(-5px) rotate(-45deg); }
 
 @media (max-width: 52rem) {
-  .brand__word { height: 1.3rem; }
+  .brand__mark { height: 2.6rem; }
+  .brand__word { height: 1.6rem; }
   .nav-toggle { display: block; }
   .site-nav {
     position: absolute;
