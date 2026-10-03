@@ -93,22 +93,27 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__stripes" aria-hidden="true"></div>
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="hero__kicker">Autoverhuur in Rotterdam</p>
-          <h1 class="hero__title" id="hero-title">Premium cars.<br>Betrouwbare service.</h1>
+      <div class="container hero__inner">
+        <p class="eyebrow">Autoverhuur in Rotterdam</p>
+        <h1 class="hero__title" id="hero-title">Premium cars.<br><span>Betrouwbare service.</span></h1>
+        <div class="hero__row">
           <p class="hero__lead">Rij de Audi RS3: 400 pk, quattro en vijf cilinders. Je regelt je huur rechtstreeks met ons, zonder balie en zonder wachtrij.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#reserveren">Beschikbaarheid aanvragen</a>
             <a class="btn btn--ghost" href="#wagenpark">Bekijk de RS3</a>
           </div>
         </div>
+      </div>
+
+      <div class="container">
         <!-- Tijdelijke merkvisual; vervang door <img> zodra de professionele foto's er zijn -->
-        <figure class="hero__media visual" role="img" aria-label="Audi RS3: 400 pk, 0 tot 100 in 3,8 seconden">
+        <figure class="hero__media visual visual--wide" role="img" aria-label="Audi RS3: 400 pk, 0 tot 100 in 3,8 seconden, 250 km/u">
           <span class="visual__stripes" aria-hidden="true"></span>
           <img class="visual__mark" src="/assets/img/brand/logo-mark-white.png" alt="" width="207" height="256">
-          <span class="visual__kicker">Audi</span>
-          <span class="visual__model">RS3</span>
+          <span class="visual__name">
+            <span class="visual__kicker">Audi</span>
+            <span class="visual__model">RS3</span>
+          </span>
           <span class="visual__stats">
             <span><strong>400</strong> pk</span>
             <span><strong>3,8</strong> s 0–100</span>
@@ -116,29 +121,25 @@
           </span>
         </figure>
       </div>
+    </section>
 
+    <section class="pillars-band" aria-label="Waarom Nordmann">
       <div class="container">
         <ul class="pillars">
-          <li class="pillar">
+          <li class="pillar" data-reveal>
             <svg class="pillar__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 19l2.4-6.2A2 2 0 0 1 10.3 11.5h11.4a2 2 0 0 1 1.9 1.3L26 19M5 19h22v5H5zM9 24v2.5M23 24v2.5M9 21.5h2M21 21.5h2"/></svg>
-            <div>
-              <h2 class="pillar__title">Premium auto's</h2>
-              <p class="pillar__text">Zorgvuldig gekozen, schoon en technisch in topconditie.</p>
-            </div>
+            <h2 class="pillar__title">Premium auto's</h2>
+            <p class="pillar__text">Zorgvuldig gekozen, schoon en technisch in topconditie.</p>
           </li>
-          <li class="pillar">
+          <li class="pillar" data-reveal>
             <svg class="pillar__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 7h16v18H8zM12 4v6M20 4v6M8 14h16M12 19h3"/></svg>
-            <div>
-              <h2 class="pillar__title">Autoverhuur</h2>
-              <p class="pillar__text">Per dag of weekend, afgestemd op jouw plannen.</p>
-            </div>
+            <h2 class="pillar__title">Autoverhuur</h2>
+            <p class="pillar__text">Per dag of weekend, afgestemd op jouw plannen.</p>
           </li>
-          <li class="pillar">
+          <li class="pillar" data-reveal>
             <svg class="pillar__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4l10 4v7c0 6.2-4.2 11-10 13-5.8-2-10-6.8-10-13V8zM11.5 16l3.2 3.2 6-6.4"/></svg>
-            <div>
-              <h2 class="pillar__title">Betrouwbare service</h2>
-              <p class="pillar__text">Eén vast aanspreekpunt en heldere afspraken vooraf.</p>
-            </div>
+            <h2 class="pillar__title">Betrouwbare service</h2>
+            <p class="pillar__text">Eén vast aanspreekpunt en heldere afspraken vooraf.</p>
           </li>
         </ul>
       </div>
@@ -146,8 +147,9 @@
 
     <section class="fleet" id="wagenpark" aria-labelledby="fleet-title">
       <div class="container">
-        <header class="section-head">
-          <h2 class="section-title" id="fleet-title">Wagenpark</h2>
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Wagenpark</p>
+          <h2 class="section-title" id="fleet-title">Eén auto.<br>Geen compromissen.</h2>
           <p class="section-intro">Op dit moment staat er één auto klaar. Met aandacht onderhouden en klaar voor de weg.</p>
         </header>
 
@@ -161,7 +163,7 @@
             <span class="visual__meta">Sportback · 8Y</span>
           </figure>
 
-          <div class="car__body">
+          <div class="car__body" data-reveal>
             <p class="car__brand">Audi</p>
             <h3 class="car__name">RS3 Sportback</h3>
             <p class="car__text">Een compacte auto met het karakter van een supercar. De vijfcilinder klinkt zoals hij rijdt, en dankzij quattro-aandrijving zet hij dat vermogen ook in de regen netjes op de weg. De RS Torque Rear verdeelt de kracht over de achterwielen, en in drift mode laat hij zien wat hij kan.</p>
@@ -186,7 +188,7 @@
             </ul>
 
             <div class="car__footer">
-              <p class="car__price">Prijs op aanvraag</p>
+              <p class="car__price"><span>Prijs</span>Op aanvraag</p>
               <a class="btn btn--primary" href="#reserveren" data-select-car="Audi RS3">Deze auto aanvragen</a>
             </div>
           </div>
@@ -198,24 +200,25 @@
 
     <section class="steps" id="werkwijze" aria-labelledby="steps-title">
       <div class="container">
-        <header class="section-head">
-          <h2 class="section-title" id="steps-title">Zo werkt het</h2>
-          <p class="section-intro">Geen formulieren van vijf pagina's. Drie stappen en je rijdt.</p>
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Zo werkt het</p>
+          <h2 class="section-title" id="steps-title">Drie stappen<br>en je rijdt.</h2>
+          <p class="section-intro">Geen formulieren van vijf pagina's. Gewoon persoonlijk contact.</p>
         </header>
 
         <ol class="steps__list">
-          <li class="step">
-            <span class="step__num" aria-hidden="true">1</span>
+          <li class="step" data-reveal>
+            <span class="step__num" aria-hidden="true">01</span>
             <h3 class="step__title">Kies je data</h3>
             <p class="step__text">Geef aan wanneer je de auto wilt ophalen en terugbrengen.</p>
           </li>
-          <li class="step">
-            <span class="step__num" aria-hidden="true">2</span>
+          <li class="step" data-reveal>
+            <span class="step__num" aria-hidden="true">02</span>
             <h3 class="step__title">Stuur ons een bericht</h3>
             <p class="step__text">Je aanvraag komt direct bij ons binnen via WhatsApp. Je krijgt snel een bevestiging en de voorwaarden.</p>
           </li>
-          <li class="step">
-            <span class="step__num" aria-hidden="true">3</span>
+          <li class="step" data-reveal>
+            <span class="step__num" aria-hidden="true">03</span>
             <h3 class="step__title">Ophalen en rijden</h3>
             <p class="step__text">Je haalt de auto op aan de Westerstraat in Rotterdam. Wij lopen alles samen met je na.</p>
           </li>
@@ -228,7 +231,8 @@
         <div class="container booking__grid">
           <div class="booking__intro">
             <img class="booking__mark" src="/assets/img/brand/logo-mark-white.png" alt="" width="207" height="256">
-            <h2 class="booking__title" id="booking-title">Reserveren</h2>
+            <p class="eyebrow eyebrow--light">Reserveren</p>
+            <h2 class="booking__title" id="booking-title">Klaar om<br>te rijden?</h2>
             <p class="booking__lead">Vul je gegevens in en verstuur je aanvraag via WhatsApp. Liever bellen of mailen? Dat kan natuurlijk ook.</p>
 
             <ul class="contact-list">

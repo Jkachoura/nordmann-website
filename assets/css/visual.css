@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: var(--space-4);
+  padding: var(--space-5);
   color: var(--c-white);
   background:
     linear-gradient(160deg, rgba(21, 36, 121, 0.55) 0%, rgba(12, 20, 64, 0.92) 70%),
@@ -25,10 +25,12 @@
 
 .visual .visual__mark {
   position: absolute;
-  top: var(--space-4); left: var(--space-4);
+  top: var(--space-5); left: var(--space-5);
   width: auto; height: 3.5rem;
   object-fit: contain;
 }
+
+.visual__name { display: flex; flex-direction: column; }
 
 .visual__kicker {
   font-size: var(--fs-300);
@@ -56,18 +58,47 @@
 .visual__stats {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-1) var(--space-3);
+  gap: var(--space-1) var(--space-4);
   margin-top: var(--space-3);
   padding-top: var(--space-2);
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   font-size: var(--fs-300);
   color: rgba(255, 255, 255, 0.75);
 }
-.visual__stats strong { font-size: var(--fs-500); font-weight: 700; color: var(--c-white); }
+.visual__stats strong { font-size: var(--fs-600); font-weight: 700; color: var(--c-white); }
+
+/* Breed panorama in de hero: naam links, cijfers rechts */
+.visual--wide {
+  aspect-ratio: 21 / 9;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.visual--wide .visual__model { font-size: clamp(6rem, 2rem + 14vw, 16rem); }
+.visual--wide .visual__stats {
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0 0 0 var(--space-4);
+  border-top: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
 
 @media (max-width: 52rem) {
   .visual { padding: var(--space-3); }
-  .hero__media.visual { aspect-ratio: 1 / 1; } /* ruimte voor logo én cijfers */
   .visual .visual__mark { top: var(--space-3); left: var(--space-3); height: 2.75rem; }
   .visual__model { font-size: clamp(4.5rem, 2rem + 14vw, 7rem); }
+
+  .visual--wide { aspect-ratio: 4 / 5; flex-direction: column; align-items: stretch; justify-content: flex-end; gap: 0; }
+  .visual--wide .visual__model { font-size: clamp(5rem, 2rem + 20vw, 9rem); }
+  .visual--wide .visual__stats {
+    flex-direction: row;
+    gap: var(--space-1) var(--space-3);
+    margin-top: var(--space-3);
+    padding: var(--space-2) 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .visual--wide .visual__stats strong { font-size: var(--fs-500); }
 }
