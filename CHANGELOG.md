@@ -13,6 +13,10 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 ### Gewijzigd
 - Logo's in header, reserveringsblok en footer groter
 - Autofoto's tijdelijk vervangen door een merkvisual tot de professionele foto's er zijn
+- Ruimer ontwerp: bredere pagina, grotere letters en tussenruimtes die meegroeien met het scherm
+- Hero met kop over de volle breedte en een brede "showroomvloer" voor de RS3
+- Pijlers in een eigen sectie; wagenpark als productpagina met meescrollend beeld
+- Sectiekoppen met label, omlijnde stapnummers en rustige animaties bij het scrollen
 
 ## [1.0.0] - 2026-10-03
 
