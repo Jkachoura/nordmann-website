@@ -58,6 +58,7 @@
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/hero.css">
   <link rel="stylesheet" href="/assets/css/fleet.css">
+  <link rel="stylesheet" href="/assets/css/visual.css">
   <link rel="stylesheet" href="/assets/css/steps.css">
   <link rel="stylesheet" href="/assets/css/booking.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
@@ -102,8 +103,17 @@
             <a class="btn btn--ghost" href="#wagenpark">Bekijk de RS3</a>
           </div>
         </div>
-        <figure class="hero__media">
-          <img src="/assets/img/cars/audi-rs3-hero.jpg" alt="Witte Audi RS3 voor een glazen gebouw" width="1004" height="1328" fetchpriority="high">
+        <!-- Tijdelijke merkvisual; vervang door <img> zodra de professionele foto's er zijn -->
+        <figure class="hero__media visual" role="img" aria-label="Audi RS3: 400 pk, 0 tot 100 in 3,8 seconden">
+          <span class="visual__stripes" aria-hidden="true"></span>
+          <img class="visual__mark" src="/assets/img/brand/logo-mark-white.png" alt="" width="207" height="256">
+          <span class="visual__kicker">Audi</span>
+          <span class="visual__model">RS3</span>
+          <span class="visual__stats">
+            <span><strong>400</strong> pk</span>
+            <span><strong>3,8</strong> s 0–100</span>
+            <span><strong>250</strong> km/u</span>
+          </span>
         </figure>
       </div>
 
@@ -142,23 +152,38 @@
         </header>
 
         <article class="car">
-          <figure class="car__media">
-            <img src="/assets/img/cars/audi-rs3-front.jpg" alt="Voorkant van de witte Audi RS3 met matrix-led koplampen" width="772" height="940" loading="lazy">
+          <!-- Tijdelijke merkvisual; vervang door <img> zodra de professionele foto's er zijn -->
+          <figure class="car__media visual" role="img" aria-label="Audi RS3 Sportback">
+            <span class="visual__stripes" aria-hidden="true"></span>
+            <img class="visual__mark" src="/assets/img/brand/logo-mark-white.png" alt="" width="207" height="256">
+            <span class="visual__kicker">Audi</span>
+            <span class="visual__model">RS3</span>
+            <span class="visual__meta">Sportback · 8Y</span>
           </figure>
 
           <div class="car__body">
             <p class="car__brand">Audi</p>
             <h3 class="car__name">RS3 Sportback</h3>
-            <p class="car__text">Een compacte auto met het karakter van een supercar. De vijfcilinder klinkt zoals hij rijdt, en dankzij quattro-aandrijving zet hij dat vermogen ook in de regen netjes op de weg.</p>
+            <p class="car__text">Een compacte auto met het karakter van een supercar. De vijfcilinder klinkt zoals hij rijdt, en dankzij quattro-aandrijving zet hij dat vermogen ook in de regen netjes op de weg. De RS Torque Rear verdeelt de kracht over de achterwielen, en in drift mode laat hij zien wat hij kan.</p>
 
             <dl class="specs">
-              <div class="specs__item"><dt>Vermogen</dt><dd>400 pk</dd></div>
+              <div class="specs__item"><dt>Vermogen</dt><dd>400 pk <span class="specs__sub">294 kW</span></dd></div>
               <div class="specs__item"><dt>0–100 km/u</dt><dd>3,8 s</dd></div>
+              <div class="specs__item"><dt>Topsnelheid</dt><dd>250 km/u</dd></div>
               <div class="specs__item"><dt>Motor</dt><dd>2.5 TFSI, 5 cilinders</dd></div>
+              <div class="specs__item"><dt>Koppel</dt><dd>500 Nm</dd></div>
               <div class="specs__item"><dt>Aandrijving</dt><dd>quattro</dd></div>
               <div class="specs__item"><dt>Transmissie</dt><dd>7-traps S tronic</dd></div>
-              <div class="specs__item"><dt>Zitplaatsen</dt><dd>5</dd></div>
+              <div class="specs__item"><dt>Onderstel</dt><dd>RS sportonderstel</dd></div>
+              <div class="specs__item"><dt>Velgen</dt><dd>19 inch</dd></div>
             </dl>
+
+            <h4 class="car__subhead">Uitrusting</h4>
+            <ul class="features">
+              <li>RS Torque Rear met drift mode</li>
+              <li>Matrix LED-koplampen</li>
+              <li>Audi virtual cockpit plus</li>
+            </ul>
 
             <div class="car__footer">
               <p class="car__price">Prijs op aanvraag</p>
@@ -293,7 +318,7 @@
 
     <div class="container site-footer__bottom">
       <p>&copy; <span data-year>2026</span> Nordmann Automotive</p>
-      <!-- TODO: KvK-nummer toevoegen zodra bekend (wettelijk verplicht op een zakelijke website) -->
+      <p>KvK 42119516</p>
     </div>
   </footer>
 
