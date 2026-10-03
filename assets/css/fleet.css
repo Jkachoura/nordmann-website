@@ -42,8 +42,26 @@
 .specs__item { padding: var(--space-2) var(--space-2) var(--space-2) 0; border-bottom: 1px solid var(--c-line); }
 .specs dt { font-size: 0.8125rem; color: var(--c-text-muted); }
 .specs dd { margin-top: 0.15rem; font-weight: 600; color: var(--c-navy-ink); }
-/* De twee cijfers waar mensen voor komen krijgen meer gewicht */
-.specs__item:nth-child(-n+2) dd { font-size: var(--fs-600); font-weight: 700; color: var(--c-navy); line-height: 1.2; }
+/* De drie cijfers waar mensen voor komen krijgen meer gewicht */
+.specs__item:nth-child(-n+3) dd { font-size: var(--fs-600); font-weight: 700; color: var(--c-navy); line-height: 1.2; }
+
+.specs__sub { display: block; font-size: var(--fs-300); font-weight: 500; color: var(--c-text-muted); }
+
+.car__subhead {
+  margin-top: var(--space-4);
+  font-size: var(--fs-300);
+  font-weight: 700;
+  color: var(--c-navy);
+}
+.features { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-1); }
+.features li {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  font-size: var(--fs-300);
+  font-weight: 500;
+  color: var(--c-navy-ink);
+}
 
 .car__footer {
   display: flex;
@@ -69,4 +87,5 @@
   .car { grid-template-columns: 1fr; gap: var(--space-4); }
   .car__media { aspect-ratio: 4 / 3; }
   .specs { grid-template-columns: repeat(2, 1fr); }
+  .specs__item:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
