@@ -26,8 +26,12 @@ jobs:
       - name: Code ophalen
         uses: actions/checkout@v4
 
+      # Lokaal installeren: stylelint zoekt de config vanaf de projectmap, niet in de npx-cache
+      - name: Stylelint installeren
+        run: npm install --no-save --no-package-lock stylelint@16 stylelint-config-recommended@14
+
       - name: CSS controleren
-        run: npx --yes -p stylelint@16 -p stylelint-config-recommended@14 stylelint "assets/css/**/*.css"
+        run: npx stylelint "assets/css/**/*.css"
 
   links:
     name: Links en bestanden (lychee)
