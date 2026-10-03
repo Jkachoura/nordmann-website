@@ -7,6 +7,7 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 
 ### Toegevoegd
 - KvK-nummer in de footer
+- Privacyverklaring op /privacy/, gelinkt vanuit de footer en het reserveringsformulier
 - Uitgebreide specificaties van de RS3: topsnelheid, koppel, kW, onderstel en velgen
 - Uitrusting van de RS3: RS Torque Rear met drift mode, Matrix LED, virtual cockpit plus
 

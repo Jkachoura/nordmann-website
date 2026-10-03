@@ -72,7 +72,7 @@ en [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) voor publiceren en het koppelen van 
 - [ ] Prijzen, borg en huurvoorwaarden (minimumleeftijd, rijervaring, kilometers)
 - [ ] Specificaties van de RS3 controleren tegen het kenteken (bouwjaar, uitvoering)
 - [ ] Eigen foto's in hoge resolutie van de RS3
-- [ ] Privacyverklaring
+- [x] Privacyverklaring (`/privacy/`)
 - [ ] Lettertype lokaal hosten in plaats van via Google Fonts (privacy/AVG)
 
 ---
