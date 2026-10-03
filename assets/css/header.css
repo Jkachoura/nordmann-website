@@ -23,8 +23,8 @@
 .brand__mark { width: auto; height: 3.25rem; }
 .brand__word { width: auto; height: 2.1rem; }
 
-.site-nav { display: flex; align-items: center; gap: var(--space-4); }
-.site-nav__list { display: flex; gap: var(--space-4); }
+.site-nav { display: flex; align-items: center; gap: var(--space-5); }
+.site-nav__list { display: flex; gap: var(--space-5); }
 .site-nav__list a {
   font-size: var(--fs-300);
   font-weight: 500;
@@ -64,7 +64,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: var(--space-3);
-    padding: var(--space-3) 1.25rem var(--space-4);
+    padding: var(--space-3) var(--gutter) var(--space-4);
     background: var(--c-white);
     border-bottom: 1px solid var(--c-line);
     visibility: hidden;

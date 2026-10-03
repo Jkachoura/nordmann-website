@@ -51,6 +51,16 @@ python3 -m http.server 8000
 2. Kopieer in `index.html` het blok `<article class="car">…</article>` en pas tekst, specificaties en foto aan.
 3. Voeg de auto toe als `<option>` in het formulier (`#bf-car`).
 
+## Foto's plaatsen
+
+Zolang er geen eigen foto's zijn, toont de site een merkvisual (`assets/css/visual.css`).
+Vervang in `index.html` het blok `<figure class="… visual">` door de foto:
+
+| Plek | Formaat | Voorbeeld |
+| --- | --- | --- |
+| Hero (`.hero__media`) | Liggend, breed panorama (21:9), min. 2400 px breed | `<figure class="hero__media" style="aspect-ratio: 21 / 9"><img src="/assets/img/cars/rs3-hero.jpg" alt="…"></figure>` |
+| Wagenpark (`.car__media`) | Staand (4:5), min. 1600 px hoog | `<figure class="car__media"><img src="/assets/img/cars/rs3-detail.jpg" alt="…" loading="lazy"></figure>` |
+
 ## Werkwijze
 
 Zie [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) voor branches en commitberichten,

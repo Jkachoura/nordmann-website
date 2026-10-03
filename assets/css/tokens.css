@@ -11,29 +11,30 @@
   --c-line: rgba(21, 36, 121, 0.14);
   --c-text-muted: #545a6b;
 
-  /* Typografie */
+  /* Typografie — vloeiend, groeit mee met het scherm */
   --font-sans: "Montserrat", "Helvetica Neue", Arial, system-ui, sans-serif;
   --fs-300: 0.875rem;
-  --fs-400: 1rem;
-  --fs-500: 1.1875rem;
-  --fs-600: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
-  --fs-700: clamp(2rem, 1.4rem + 2.4vw, 3rem);
-  --fs-800: clamp(2.5rem, 1.6rem + 3.8vw, 4.5rem);
+  --fs-400: 1.0625rem;
+  --fs-500: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --fs-600: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  --fs-700: clamp(2.25rem, 1.5rem + 3vw, 4rem);
+  --fs-800: clamp(2.75rem, 1.4rem + 5.6vw, 6.5rem);
   --tracking-wide: 0.32em;  /* zoals "A U T O M O T I V E" in het logo */
 
-  /* Ruimte */
+  /* Ruimte — de grote stappen schalen mee, zodat grote schermen echt ademen */
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
   --space-4: 2rem;
-  --space-5: 3rem;
-  --space-6: 4.5rem;
-  --space-7: 7rem;
+  --space-5: clamp(2.5rem, 1.8rem + 2.4vw, 4rem);
+  --space-6: clamp(3.5rem, 2.2rem + 4.5vw, 7rem);
+  --space-7: clamp(5rem, 2.5rem + 8vw, 11rem);
 
   /* Overig */
-  --container: 72rem;
+  --container: 82rem;
+  --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 4rem);
   --radius-s: 4px;
-  --radius-m: 10px;
-  --header-h: 4.75rem;
+  --radius-m: 14px;
+  --header-h: 5.5rem;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
