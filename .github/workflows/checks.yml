@@ -1,0 +1,44 @@
+name: Controles
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  html:
+    name: HTML (HTMLHint)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code ophalen
+        uses: actions/checkout@v4
+
+      - name: HTML controleren
+        run: npx --yes htmlhint@1 "**/*.html"
+
+  css:
+    name: CSS (Stylelint)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code ophalen
+        uses: actions/checkout@v4
+
+      - name: CSS controleren
+        run: npx --yes -p stylelint@16 -p stylelint-config-recommended@14 stylelint "assets/css/**/*.css"
+
+  links:
+    name: Links en bestanden (lychee)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code ophalen
+        uses: actions/checkout@v4
+
+      # Alleen interne links: social media blokkeert bots en zou willekeurig falen
+      - name: Links controleren
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --root-dir "${{ github.workspace }}" "./**/*.html" "./**/*.md"
+          fail: true
