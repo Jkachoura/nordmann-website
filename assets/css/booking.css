@@ -1,20 +1,38 @@
-/* Reserveren — navy marmer met witte kaderlijn, net als de magneetsticker op de auto */
+/* Reserveren — diep navy met de diagonale merkstrepen en witte kaderlijn, net als de magneetsticker.
+   Volledig in CSS, dus op elk scherm haarscherp. */
 .booking {
   position: relative;
+  overflow: hidden;
   padding: clamp(0.75rem, 0.25rem + 1.5vw, 1.75rem);
-  background: var(--c-navy-deep) url("../img/brand/marble-navy.jpg") center / cover no-repeat;
   color: var(--c-white);
+  background:
+    radial-gradient(ellipse 70% 80% at 10% 0%, rgba(46, 70, 200, 0.45), transparent 65%),
+    radial-gradient(ellipse 60% 70% at 100% 100%, rgba(21, 36, 121, 0.8), transparent 70%),
+    linear-gradient(160deg, var(--c-navy) 0%, var(--c-navy-deep) 55%, #070c2a 100%);
 }
+/* Fijne krijtstreep over het hele vlak: textuur zonder foto */
 .booking::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(12, 20, 64, 0.35), rgba(12, 20, 64, 0.65));
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 18px);
+  pointer-events: none;
+}
+/* Merkstrepen in de hoek rechtsonder */
+.booking::after {
+  content: "";
+  position: absolute;
+  right: 0; bottom: 0;
+  width: clamp(10rem, 4rem + 22vw, 26rem);
+  aspect-ratio: 1;
+  background:
+    linear-gradient(135deg, transparent 0 56%, rgba(255, 255, 255, 0.9) 56% 63%, transparent 63% 68%, var(--c-steel) 68% 75%, transparent 75%);
   pointer-events: none;
 }
 
 .booking__frame {
   position: relative;
+  z-index: 1;
   border: 2px solid rgba(255, 255, 255, 0.85);
   padding-block: var(--space-7);
 }
@@ -48,11 +66,10 @@
   display: grid;
   gap: var(--space-3);
   padding: var(--space-5);
-  background: rgba(12, 20, 64, 0.55);
+  background: rgba(10, 16, 52, 0.82);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-m);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6);
 }
 .field { display: grid; gap: 0.4rem; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
