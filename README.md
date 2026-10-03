@@ -58,7 +58,7 @@ en [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) voor publiceren en het koppelen van 
 
 ## Nog te doen
 
-- [ ] KvK-nummer in de footer (wettelijk verplicht)
+- [x] KvK-nummer in de footer (wettelijk verplicht)
 - [ ] Prijzen, borg en huurvoorwaarden (minimumleeftijd, rijervaring, kilometers)
 - [ ] Specificaties van de RS3 controleren tegen het kenteken (bouwjaar, uitvoering)
 - [ ] Eigen foto's in hoge resolutie van de RS3
