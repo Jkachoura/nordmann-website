@@ -1,0 +1,72 @@
+/* Wagenpark */
+.fleet { padding-block: var(--space-7); background: var(--c-white); }
+
+.car {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.car__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  background: var(--c-mist);
+}
+.car__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.car__brand {
+  font-size: var(--fs-300);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  color: var(--c-steel);
+}
+/* Typenaam groot en strak, als een modelaanduiding op de achterklep */
+.car__name {
+  margin-top: 0.25rem;
+  font-size: var(--fs-700);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--c-navy);
+}
+.car__text { margin-top: var(--space-3); max-width: 34em; color: var(--c-text-muted); }
+
+.specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--c-line);
+}
+.specs__item { padding: var(--space-2) var(--space-2) var(--space-2) 0; border-bottom: 1px solid var(--c-line); }
+.specs dt { font-size: 0.8125rem; color: var(--c-text-muted); }
+.specs dd { margin-top: 0.15rem; font-weight: 600; color: var(--c-navy-ink); }
+/* De twee cijfers waar mensen voor komen krijgen meer gewicht */
+.specs__item:nth-child(-n+2) dd { font-size: var(--fs-600); font-weight: 700; color: var(--c-navy); line-height: 1.2; }
+
+.car__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+.car__price { font-weight: 600; color: var(--c-navy); }
+
+.fleet__more {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--c-line);
+  font-size: var(--fs-300);
+  color: var(--c-text-muted);
+}
+.fleet__more a { color: var(--c-navy); font-weight: 600; }
+
+@media (max-width: 52rem) {
+  .fleet { padding-block: var(--space-6); }
+  .car { grid-template-columns: 1fr; gap: var(--space-4); }
+  .car__media { aspect-ratio: 4 / 3; }
+  .specs { grid-template-columns: repeat(2, 1fr); }
+}
