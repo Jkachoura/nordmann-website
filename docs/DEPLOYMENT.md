@@ -11,7 +11,6 @@ je verwijst het alleen door naar GitHub.
 ```bash
 git remote add origin https://github.com/<jouw-gebruikersnaam>/nordmann-website.git
 git push -u origin main
-git push origin develop
 git push origin --tags
 ```
 
