@@ -1,5 +1,5 @@
 /* Wagenpark — opgezet als productpagina: het beeld blijft staan, de details scrollen erlangs */
-.fleet { padding-block: var(--space-7); background: var(--c-white); }
+.fleet { padding-block: var(--space-5) var(--space-7); background: var(--c-white); }
 
 .car {
   display: grid;
@@ -7,6 +7,15 @@
   gap: var(--space-6);
   align-items: start;
 }
+
+/* Elke volgende auto gespiegeld en met een rustige scheiding */
+.car + .car {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--c-line);
+}
+.car--reverse { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+.car--reverse .car__media { order: 2; }
 
 .car__media {
   position: sticky;
@@ -103,7 +112,9 @@
 .fleet__more a { color: var(--c-navy); font-weight: 600; }
 
 @media (max-width: 52rem) {
-  .car { grid-template-columns: 1fr; gap: var(--space-4); }
+  .car, .car--reverse { grid-template-columns: 1fr; gap: var(--space-4); }
+  .car--reverse .car__media { order: 0; }
+  .car + .car { margin-top: var(--space-5); padding-top: var(--space-5); }
   .car__media { position: relative; top: auto; aspect-ratio: 4 / 3; }
   .car__body { padding-top: 0; }
   .specs { gap: var(--space-3) var(--space-2); }
