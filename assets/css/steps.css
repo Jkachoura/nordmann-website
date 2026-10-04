@@ -1,0 +1,30 @@
+/* Zo werkt het — echte volgorde, dus genummerd */
+.steps { padding-block: var(--space-7); background: var(--c-mist); }
+
+.steps__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  counter-reset: none;
+}
+
+.step {
+  position: relative;
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--c-navy);
+}
+.step__num {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-steel);
+  opacity: 0.55;
+}
+.step__title { margin-top: var(--space-2); font-size: var(--fs-500); font-weight: 700; color: var(--c-navy); }
+.step__text { margin-top: var(--space-1); color: var(--c-text-muted); max-width: 28em; }
+
+@media (max-width: 52rem) {
+  .steps { padding-block: var(--space-6); }
+  .steps__list { grid-template-columns: 1fr; gap: var(--space-4); }
+}
