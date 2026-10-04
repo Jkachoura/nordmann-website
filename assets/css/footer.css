@@ -1,0 +1,45 @@
+/* Footer */
+.site-footer {
+  background: var(--c-navy-deep);
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: var(--space-6);
+  padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+  font-size: var(--fs-300);
+}
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: var(--space-5);
+}
+.site-footer__brand img { width: 11rem; height: auto; }
+.site-footer__heading { font-size: var(--fs-300); font-weight: 700; color: var(--c-white); margin-bottom: var(--space-2); }
+.site-footer__list { display: grid; gap: 0.6rem; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--c-white); text-decoration: underline; }
+.site-footer__bottom {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Zwevende WhatsApp-knop, alleen op mobiel */
+.wa-float {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  display: none;
+  place-items: center;
+  width: 3.5rem; height: 3.5rem;
+  border-radius: 50%;
+  background: var(--c-navy);
+  box-shadow: 0 10px 24px -8px rgba(12, 20, 64, 0.6);
+}
+.wa-float svg { width: 1.6rem; height: 1.6rem; fill: var(--c-white); }
+
+@media (max-width: 52rem) {
+  .site-footer__grid { grid-template-columns: 1fr 1fr; }
+  .site-footer__brand { grid-column: 1 / -1; }
+  .wa-float { display: grid; }
+}
