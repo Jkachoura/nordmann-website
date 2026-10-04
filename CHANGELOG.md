@@ -6,12 +6,16 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 ## [Unreleased]
 
 ### Toegevoegd
+- Volkswagen Golf 8.5 R in de hero, het wagenpark en het reserveringsformulier
 - KvK-nummer in de footer
 - Privacyverklaring op /privacy/, gelinkt vanuit de footer en het reserveringsformulier
 - Uitgebreide specificaties van de RS3: topsnelheid, koppel, kW, onderstel en velgen
 - Uitrusting van de RS3: RS Torque Rear met drift mode, Matrix LED, virtual cockpit plus
 
 ### Gewijzigd
+- Alle teksten in de u-vorm; nieuwe teksten voor hero, wagenpark, RS3 en de drie stappen
+- Minder witruimte boven het wagenpark en bij Reserveren
+- Privacyverklaring formeler opgesteld; kopie van het identiteitsbewijs (met afgeschermd BSN) en bezorgadres toegevoegd
 - Lettertype Montserrat zelf gehost: geen verbinding meer met Google Fonts
 - Logo's in header, reserveringsblok en footer groter
 - Autofoto's tijdelijk vervangen door een merkvisual tot de professionele foto's er zijn
