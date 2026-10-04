@@ -69,38 +69,18 @@
 }
 .visual__stats strong { font-size: var(--fs-600); font-weight: 700; color: var(--c-white); }
 
-/* Breed panorama in de hero: naam links, cijfers rechts */
-.visual--wide {
-  aspect-ratio: 21 / 9;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--space-4);
-}
-.visual--wide .visual__model { font-size: clamp(6rem, 2rem + 14vw, 16rem); }
-.visual--wide .visual__stats {
-  flex-direction: column;
-  gap: var(--space-2);
-  margin: 0;
-  padding: 0 0 0 var(--space-4);
-  border-top: 0;
-  border-left: 1px solid rgba(255, 255, 255, 0.25);
-}
+/* Kaart per auto in de hero */
+.visual--hero { aspect-ratio: 4 / 3; }
+.visual--hero .visual__model { font-size: clamp(4rem, 1rem + 6vw, 8.5rem); }
+.visual--hero .visual__stats strong { font-size: var(--fs-500); }
+
+/* Langere modelnaam ("Golf R") iets kleiner, zodat hij in het vlak past */
+.visual__model.visual__model--long { font-size: clamp(3.75rem, 1.5rem + 5vw, 7rem); }
 
 @media (max-width: 52rem) {
   .visual { padding: var(--space-3); }
   .visual .visual__mark { top: var(--space-3); left: var(--space-3); height: 2.75rem; }
   .visual__model { font-size: clamp(4.5rem, 2rem + 14vw, 7rem); }
 
-  .visual--wide { aspect-ratio: 4 / 5; flex-direction: column; align-items: stretch; justify-content: flex-end; gap: 0; }
-  .visual--wide .visual__model { font-size: clamp(5rem, 2rem + 20vw, 9rem); }
-  .visual--wide .visual__stats {
-    flex-direction: row;
-    gap: var(--space-1) var(--space-3);
-    margin-top: var(--space-3);
-    padding: var(--space-2) 0 0;
-    border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-  }
-  .visual--wide .visual__stats strong { font-size: var(--fs-500); }
+  .visual__model.visual__model--long { font-size: clamp(3.5rem, 1.5rem + 10vw, 5.5rem); }
 }

@@ -3,7 +3,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, var(--c-white) 0%, var(--c-mist) 100%);
-  padding-block: var(--space-6) var(--space-7);
+  padding-block: var(--space-6) var(--space-5);
 }
 
 /* Diagonale navy + grijze strepen uit de banner, linksboven */
@@ -40,17 +40,25 @@
   margin-top: var(--space-5);
 }
 
+.hero__leads { display: grid; gap: var(--space-2); max-width: 38em; }
 .hero__lead {
-  max-width: 32em;
+  max-width: 38em;
   font-size: var(--fs-500);
   color: var(--c-text-muted);
 }
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
+/* Beide auto's naast elkaar, op mobiel onder elkaar */
+.hero__cars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
 .hero__media {
   position: relative;
-  margin-top: var(--space-6);
   border-radius: var(--radius-m);
   overflow: hidden;
   box-shadow: 0 50px 90px -50px rgba(12, 20, 64, 0.55);
@@ -63,12 +71,13 @@
   .hero__inner > :nth-child(2) { animation-delay: 0.08s; }
   .hero__inner > :nth-child(3) { animation-delay: 0.18s; }
   .hero__media { animation: reveal 1.3s 0.15s var(--ease) both; }
+  .hero__media + .hero__media { animation-delay: 0.3s; }
 }
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
 @keyframes reveal { from { opacity: 0; clip-path: inset(12% 6% 0 6% round var(--radius-m)); } to { opacity: 1; clip-path: inset(0 round var(--radius-m)); } }
 
 /* Drie pijlers, met ruimte eromheen */
-.pillars-band { padding-block: var(--space-6); background: var(--c-white); }
+.pillars-band { padding-block: var(--space-6) var(--space-5); background: var(--c-white); }
 
 .pillars {
   display: grid;
@@ -99,6 +108,7 @@
   .hero__row { flex-direction: column; align-items: flex-start; }
   .hero__actions { width: 100%; }
   .hero__actions .btn { flex: 1 1 auto; }
+  .hero__cars { grid-template-columns: 1fr; }
   .pillars { grid-template-columns: 1fr; gap: var(--space-4); }
   .pillar { grid-template-columns: auto 1fr; column-gap: var(--space-3); row-gap: 0.25rem; }
   .pillar__icon { grid-row: span 2; margin-bottom: 0; }
