@@ -13,6 +13,7 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 - Uitrusting van de RS3: RS Torque Rear met drift mode, Matrix LED, virtual cockpit plus
 
 ### Gewijzigd
+- Gelijke ruimte tussen alle secties; "social media" verwijst nu naar Instagram, TikTok en Snapchat
 - Alle teksten in de u-vorm; nieuwe teksten voor hero, wagenpark, RS3 en de drie stappen
 - Minder witruimte boven het wagenpark en bij Reserveren
 - Privacyverklaring formeler opgesteld; kopie van het identiteitsbewijs (met afgeschermd BSN) en bezorgadres toegevoegd
