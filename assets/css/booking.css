@@ -1,0 +1,91 @@
+/* Reserveren — navy marmer met witte kaderlijn, net als de magneetsticker op de auto */
+.booking {
+  position: relative;
+  padding: var(--space-3);
+  background: var(--c-navy-deep) url("../img/brand/marble-navy.jpg") center / cover no-repeat;
+  color: var(--c-white);
+}
+.booking::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 20, 64, 0.35), rgba(12, 20, 64, 0.65));
+  pointer-events: none;
+}
+
+.booking__frame {
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  padding-block: var(--space-6);
+}
+
+.booking__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.booking__mark { width: 3.5rem; height: auto; margin-bottom: var(--space-3); }
+.booking__title { font-size: var(--fs-700); font-weight: 700; line-height: 1.1; }
+.booking__lead { margin-top: var(--space-2); max-width: 30em; font-size: var(--fs-500); color: rgba(255, 255, 255, 0.82); }
+
+.contact-list { display: grid; gap: var(--space-3); margin-top: var(--space-5); }
+.contact-list li { display: grid; gap: 0.15rem; }
+.contact-list__label { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.65); }
+.contact-list a {
+  font-size: var(--fs-500);
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  justify-self: start;
+}
+.contact-list a:hover { border-bottom-color: var(--c-white); }
+
+/* Formulier */
+.booking-form {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: rgba(12, 20, 64, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-m);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.field { display: grid; gap: 0.4rem; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.field label { font-size: var(--fs-300); font-weight: 600; }
+.field__optional { font-weight: 400; color: rgba(255, 255, 255, 0.6); }
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--c-navy-ink);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-s);
+}
+.field textarea { resize: vertical; min-height: 6rem; }
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible { outline: 2px solid var(--c-white); outline-offset: 2px; }
+.field.is-invalid input { border-color: #ff8a8a; }
+.field__error { display: none; font-size: 0.8125rem; color: #ffc2c2; }
+.field.is-invalid .field__error { display: block; }
+
+.booking-form__note { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.65); text-align: center; }
+
+@media (max-width: 52rem) {
+  .booking { padding: var(--space-2); }
+  .booking__frame { padding-block: var(--space-5); }
+  .booking__grid { grid-template-columns: 1fr; gap: var(--space-5); }
+  .booking-form { padding: var(--space-3); }
+}
+@media (max-width: 30rem) {
+  .field-row { grid-template-columns: 1fr; }
+}
