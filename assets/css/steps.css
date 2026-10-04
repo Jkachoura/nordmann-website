@@ -1,5 +1,5 @@
 /* Zo werkt het — echte volgorde, dus genummerd */
-.steps { padding-block: var(--space-7); background: var(--c-mist); }
+.steps { padding-block: var(--space-5) var(--space-6); background: var(--c-mist); }
 
 .steps__list {
   display: grid;

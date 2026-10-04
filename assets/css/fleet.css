@@ -1,5 +1,5 @@
 /* Wagenpark — opgezet als productpagina: het beeld blijft staan, de details scrollen erlangs */
-.fleet { padding-block: var(--space-5) var(--space-7); background: var(--c-white); }
+.fleet { padding-block: var(--space-5); background: var(--c-white); }
 
 .car {
   display: grid;
@@ -103,13 +103,29 @@
 .car__price span { font-size: 0.8125rem; font-weight: 500; color: var(--c-text-muted); }
 
 .fleet__more {
-  margin-top: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  margin-top: var(--space-5);
   padding-top: var(--space-4);
   border-top: 1px solid var(--c-line);
   font-size: var(--fs-400);
   color: var(--c-text-muted);
 }
-.fleet__more a { color: var(--c-navy); font-weight: 600; }
+.fleet__social { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.fleet__social a {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  font-size: var(--fs-300);
+  font-weight: 600;
+  color: var(--c-navy);
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+.fleet__social a:hover { background: var(--c-navy); color: var(--c-white); }
 
 @media (max-width: 52rem) {
   .car, .car--reverse { grid-template-columns: 1fr; gap: var(--space-4); }
