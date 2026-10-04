@@ -34,14 +34,14 @@
   position: relative;
   z-index: 1;
   border: 2px solid rgba(255, 255, 255, 0.85);
-  padding-block: var(--space-7);
+  padding-block: var(--space-5) var(--space-6);
 }
 
 .booking__grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: var(--space-6);
-  align-items: center;
+  align-items: start;
 }
 
 .booking__mark { width: 4.5rem; height: auto; margin-bottom: var(--space-4); }
