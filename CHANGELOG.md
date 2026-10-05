@@ -13,6 +13,8 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 - Uitrusting van de RS3: RS Torque Rear met drift mode, Matrix LED, virtual cockpit plus
 
 ### Gewijzigd
+- Bedrijfsnaam "Nordmann Automotive B.V." in de footer en de bedrijfsgegevens voor zoekmachines
+- Privacyverklaring vervangen door de versie van Nordmann Automotive B.V. (5 oktober 2026): adresbewijs, uitgifte en retour, waarborgsom, GPS-tracker, dashcam, zakelijke huur, garantstelling en incasso
 - Gelijke ruimte tussen alle secties; "social media" verwijst nu naar Instagram, TikTok en Snapchat
 - Alle teksten in de u-vorm; nieuwe teksten voor hero, wagenpark, RS3 en de drie stappen
 - Minder witruimte boven het wagenpark en bij Reserveren
