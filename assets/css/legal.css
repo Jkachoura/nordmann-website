@@ -44,6 +44,33 @@
 .legal__table--wide .col-doel { width: 27%; }
 .legal__table--wide .col-grondslag { width: 23%; }
 
+/* Smaller dan een laptop: elke rij wordt een blok, met de situatie als kopje
+   en de overige kolommen met hun label ervoor. Vier smalle kolommen naast elkaar lezen niet. */
+@media (max-width: 64rem) {
+  .legal__table--wide { overflow: visible; border: 0; border-radius: 0; }
+  .legal__table--wide table { display: block; min-width: 0; table-layout: auto; }
+  .legal__table--wide colgroup, .legal__table--wide thead { display: none; }
+  .legal__table--wide tbody { display: grid; gap: var(--space-2); }
+  .legal__table--wide tr {
+    display: grid;
+    gap: 0.6rem;
+    padding: var(--space-3);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-m);
+  }
+  .legal__table--wide td { display: grid; gap: 0.1rem; padding: 0; border: 0; }
+  .legal__table--wide td::before {
+    content: attr(data-label);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-steel);
+  }
+  .legal__table--wide td:first-child { font-size: var(--fs-400); color: var(--c-navy); }
+  .legal__table--wide td:first-child::before { content: none; }
+}
+
 @media (max-width: 30rem) {
   .legal__card div { grid-template-columns: 1fr; gap: 0; }
 }
