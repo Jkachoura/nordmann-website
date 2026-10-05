@@ -5,7 +5,9 @@
 .legal__head { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); max-width: 46rem; }
 .legal__date { font-size: var(--fs-300); color: var(--c-steel); }
 
-.legal__body { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); max-width: 46rem; }
+.legal__body { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+/* Leeskolom van 46rem; alleen de brede tabel mag daaruit breken */
+.legal__body section > :not(.legal__table--wide) { max-width: 46rem; }
 .legal__body section { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-2); }
 .legal__body h2 { font-size: var(--fs-600); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; color: var(--c-navy); }
 .legal__body p, .legal__body li { color: var(--c-text-muted); }
@@ -33,6 +35,14 @@
 .legal__table th { font-weight: 600; color: var(--c-navy); background: var(--c-mist); }
 .legal__table td { color: var(--c-text-muted); }
 .legal__table td:first-child { font-weight: 600; color: var(--c-navy-ink); }
+
+/* Grote tabel (hoofdstuk 2): breder dan de tekst, met vaste kolomverhouding */
+.legal__table--wide { max-width: 72rem; }
+.legal__table--wide table { table-layout: fixed; min-width: 52rem; }
+.legal__table--wide .col-situatie { width: 18%; }
+.legal__table--wide .col-gegevens { width: 32%; }
+.legal__table--wide .col-doel { width: 27%; }
+.legal__table--wide .col-grondslag { width: 23%; }
 
 @media (max-width: 30rem) {
   .legal__card div { grid-template-columns: 1fr; gap: 0; }
