@@ -124,3 +124,15 @@ test("'Deze auto aanvragen' vult de juiste auto in", async ({ page }) => {
     await expect(page.locator("#bf-car")).toHaveValue(car);
   }
 });
+
+test("verstuurt niets zonder JavaScript (geen gegevens in de URL)", async ({ browser, baseURL }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
+  const page = await context.newPage();
+  await page.goto("/");
+  const button = page.locator("[data-booking-form] button[type=submit]");
+  await expect(button).toBeDisabled();
+  await page.fill("#bf-name", "Jan Jansen");
+  await page.press("#bf-name", "Enter"); // ook Enter mag het formulier niet versturen
+  await expect(page).toHaveURL(baseURL + "/");
+  await context.close();
+});

@@ -17,9 +17,10 @@ module.exports = defineConfig({
     trace: "on-first-retry"
   },
 
-  // Dezelfde statische server als lokaal: alleen de map public/
+  // Statische server voor public/ (tests/server.js), zoals GitHub Pages
   webServer: {
-    command: `python3 -m http.server ${PORT} --directory public`,
+    command: `node tests/server.js`,
+    env: { PORT: String(PORT) },
     url: `http://localhost:${PORT}`,
     reuseExistingServer: !process.env.CI
   },

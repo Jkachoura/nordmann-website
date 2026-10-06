@@ -69,10 +69,12 @@ Bij elke pull request draaien automatisch de controles (HTML, CSS, links) en de 
 Zelf draaien kan met Node.js:
 
 ```bash
-npm install
+npm ci
 npx playwright install chromium
 npm test
 ```
+
+De tests starten zelf een server voor `public/` (`tests/server.js`).
 
 ## Werkwijze
 

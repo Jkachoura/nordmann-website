@@ -17,6 +17,7 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 ### Gewijzigd
 - Website verplaatst naar `public/`; ongebruikte bestanden verwijderd
 - Reserveringsformulier controleert datums, naam en auto in JavaScript (datum in het verleden kwam er eerder door)
+- Verzendknop van het formulier staat uit tot het script geladen is (anders kwamen naam en datums in de URL)
 - Donkerder grijs voor kleine tekst (WCAG AA-contrast), onderstreepte links in de footer, tabellen in de privacyverklaring met toetsenbord te bereiken
 - Privacyverklaring: de tabel in hoofdstuk 2 wordt op tablet en mobiel een lijst met blokken per situatie
 - Bedrijfsnaam "Nordmann Automotive B.V." in de footer en de bedrijfsgegevens voor zoekmachines
