@@ -54,7 +54,7 @@ Vervang in `public/index.html` elk blok `<figure class="… visual">` door een f
 
 | Plek | Formaat | Voorbeeld |
 | --- | --- | --- |
-| Hero, één kaart per auto (`.hero__media`) | Liggend (4:3), min. 1600 px breed | `<figure class="hero__media" style="aspect-ratio: 4 / 3"><img src="assets/img/cars/rs3-hero.jpg" alt="…"></figure>` |
+| Hero, één kaart per auto (`.hero__media`) | Liggend (4:3), min. 1600 px breed | `<figure class="hero__media visual--hero"><img src="assets/img/cars/rs3-hero.jpg" alt="…"></figure>` (de class `visual--hero` geeft de 4:3-verhouding) |
 | Wagenpark (`.car__media`) | Staand (4:5), min. 1600 px hoog | `<figure class="car__media"><img src="assets/img/cars/rs3-detail.jpg" alt="…" loading="lazy"></figure>` |
 
 ## Algemene voorwaarden bijwerken
@@ -75,6 +75,20 @@ npm test
 ```
 
 De tests starten zelf een server voor `public/` (`tests/server.js`).
+
+## Beveiliging
+
+De site heeft geen server, database of inlog; het formulier stelt alleen een WhatsApp-bericht op.
+Extra beveiliging:
+
+- **Content-Security-Policy** in elke pagina (`<meta>`) en als header op Netlify (`netlify.toml`):
+  alleen scripts, stijlen, lettertypes en afbeeldingen van de eigen site. Gebruik dus geen
+  `<style>`-blokken, `style="…"`-attributen of inline scripts; zet stijl in een CSS-bestand.
+- Het enige inline script (basismap in `public/404.html`) is toegestaan via zijn sha256-hash.
+  Pas je het aan, werk dan de hash bij; de test `CSP-hash` controleert dit.
+- Op Netlify ook: niet in een frame van een andere site te laden, `nosniff`, `Referrer-Policy`,
+  `Permissions-Policy` en HSTS. GitHub Pages ondersteunt geen eigen headers; daar geldt de `<meta>`-policy.
+- **Dependabot** (`.github/dependabot.yml`) opent maandelijks een pull request bij updates van het testgereedschap en de workflows.
 
 ## Werkwijze
 

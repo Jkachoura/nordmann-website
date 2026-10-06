@@ -1,0 +1,14 @@
+# Dependabot opent automatisch een pull request bij (beveiligings)updates.
+# Alleen het testgereedschap en de workflows gebruiken pakketten; de website zelf niet.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    labels: [dependencies]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    labels: [dependencies]
