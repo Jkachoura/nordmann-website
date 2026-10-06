@@ -96,6 +96,8 @@
 .field__error { display: none; font-size: 0.8125rem; color: #ffc2c2; }
 .field.is-invalid .field__error { display: block; }
 
+.booking-form [data-booking-submit]:disabled { opacity: 0.6; cursor: not-allowed; }
+
 .booking-form__note { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.65); text-align: center; }
 
 /* Twee kolommen pas als beide echt ruimte hebben */

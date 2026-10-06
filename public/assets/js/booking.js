@@ -51,6 +51,11 @@
     fields.to.min = isValidIso(fields.from.value) ? fields.from.value : todayIso();
   });
 
+  // De knop staat in de HTML uit, zodat het formulier zonder dit script niet op de
+  // gewone manier wordt verstuurd (met naam en datums in de URL). Nu het script draait: aan.
+  var submitButton = form.querySelector("[data-booking-submit]");
+  if (submitButton) submitButton.disabled = false;
+
   // "Deze auto aanvragen" vult de auto alvast in
   document.querySelectorAll("[data-select-car]").forEach(function (link) {
     link.addEventListener("click", function () {
