@@ -315,16 +315,17 @@
           <form class="booking-form" data-booking-form novalidate>
             <div class="field">
               <label for="bf-name">Naam</label>
-              <input id="bf-name" name="name" type="text" autocomplete="name" required>
+              <input id="bf-name" name="name" type="text" autocomplete="name" maxlength="80" required>
               <p class="field__error" data-error-for="name">Vul uw naam in.</p>
             </div>
 
             <div class="field">
               <label for="bf-car">Auto</label>
-              <select id="bf-car" name="car">
+              <select id="bf-car" name="car" required>
                 <option>Audi RS3</option>
                 <option>Volkswagen Golf 8.5 R</option>
               </select>
+              <p class="field__error" data-error-for="car">Kies een auto.</p>
             </div>
 
             <div class="field-row">
@@ -336,13 +337,13 @@
               <div class="field">
                 <label for="bf-to">Terugbrengen</label>
                 <input id="bf-to" name="to" type="date" required>
-                <p class="field__error" data-error-for="to">Kies een datum op of na de ophaaldatum.</p>
+                <p class="field__error" data-error-for="to">Kies een terugbrengdatum.</p>
               </div>
             </div>
 
             <div class="field">
               <label for="bf-note">Opmerking <span class="field__optional">(optioneel)</span></label>
-              <textarea id="bf-note" name="note" rows="3" placeholder="Bijvoorbeeld een speciale gelegenheid of een gewenste ophaaltijd"></textarea>
+              <textarea id="bf-note" name="note" rows="3" maxlength="500" placeholder="Bijvoorbeeld een speciale gelegenheid of een gewenste ophaaltijd"></textarea>
             </div>
 
             <button class="btn btn--light btn--block" type="submit">
