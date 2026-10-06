@@ -6,6 +6,7 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 ## [Unreleased]
 
 ### Toegevoegd
+- Beveiliging: Content-Security-Policy in elke pagina, beveiligingsheaders op Netlify (o.a. geen inbedding in vreemde frames), Dependabot voor updates
 - Automatische browsertests (Playwright) bij elke pull request
 - Algemene voorwaarden: keuzepagina (/algemene-voorwaarden/) met particulier (/voorwaarden/) en zakelijk (/voorwaarden-zakelijk/), elk als pdf te downloaden; link in de footer
 - Volkswagen Golf 8.5 R in de hero, het wagenpark en het reserveringsformulier
