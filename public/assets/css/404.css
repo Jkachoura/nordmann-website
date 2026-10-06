@@ -1,0 +1,4 @@
+/* Pagina niet gevonden (404.html) */
+.nf { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 2rem; background: var(--c-mist); }
+.nf img { width: 4rem; margin: 0 auto 1.5rem; }
+.nf p { margin: 1rem 0 2rem; color: var(--c-text-muted); }

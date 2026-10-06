@@ -5,6 +5,20 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const ROOT = path.join(__dirname, "..", "public");
+
+// Dezelfde beveiligingsheaders als Netlify, rechtstreeks uit netlify.toml,
+// zodat de tests de site onder de echte Content-Security-Policy draaien
+function netlifyHeaders() {
+  const toml = fs.readFileSync(path.join(__dirname, "..", "netlify.toml"), "utf8");
+  const block = toml.split("[headers.values]")[1] || "";
+  const headers = {};
+  for (const line of block.split(/\r?\n/)) {
+    const m = line.trim().match(/^([A-Za-z-]+)\s*=\s*"(.*)"$/);
+    if (m) headers[m[1]] = m[2];
+  }
+  return headers;
+}
+const SECURITY_HEADERS = netlifyHeaders();
 const PORT = Number(process.env.PORT) || 4173;
 
 const TYPES = {
@@ -24,7 +38,10 @@ const TYPES = {
 };
 
 function send(res, status, file) {
-  res.writeHead(status, { "Content-Type": TYPES[path.extname(file)] || "application/octet-stream" });
+  res.writeHead(status, {
+    ...SECURITY_HEADERS,
+    "Content-Type": TYPES[path.extname(file)] || "application/octet-stream"
+  });
   fs.createReadStream(file).pipe(res);
 }
 
