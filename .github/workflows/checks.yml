@@ -46,3 +46,33 @@ jobs:
         with:
           args: --offline --no-progress --root-dir "${{ github.workspace }}/public" "./public/**/*.html" "./*.md" "./docs/*.md"
           fail: true
+
+  tests:
+    name: Browsertests (Playwright)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code ophalen
+        uses: actions/checkout@v4
+
+      - name: Node.js installeren
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Testgereedschap installeren
+        run: npm install --no-package-lock
+
+      - name: Browser installeren
+        run: npx playwright install --with-deps chromium
+
+      # Opent de site in een echte browser, op desktop en mobiel (zie tests/)
+      - name: Tests draaien
+        run: npx playwright test
+
+      - name: Rapport bewaren bij fouten
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-rapport
+          path: playwright-report/
+          retention-days: 14

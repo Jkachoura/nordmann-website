@@ -27,6 +27,7 @@ Bij elke pull request naar `main` draait `.github/workflows/checks.yml`:
 | HTMLHint | Ongeldige HTML, ontbrekende `alt`-teksten, dubbele id's | `.htmlhintrc` |
 | Stylelint | Fouten in de CSS | `.stylelintrc.json` |
 | lychee | Dode interne links en ontbrekende afbeeldingen of bestanden | `checks.yml` |
+| Playwright | Opent de site in een echte browser (desktop en mobiel): laadfouten, horizontaal scrollen, toegankelijkheid (axe), het reserveringsformulier, het mobiele menu en de voorwaarden | `tests/`, `playwright.config.js` |
 
 Een rood kruisje in de pull request betekent: nog niet mergen. Klik op **Details** om te zien wat er mis is.
 Links naar social media worden niet gecontroleerd; die sites blokkeren automatische controles.

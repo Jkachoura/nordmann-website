@@ -6,6 +6,7 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 ## [Unreleased]
 
 ### Toegevoegd
+- Automatische browsertests (Playwright) bij elke pull request
 - Algemene voorwaarden: keuzepagina (/algemene-voorwaarden/) met particulier (/voorwaarden/) en zakelijk (/voorwaarden-zakelijk/), elk als pdf te downloaden; link in de footer
 - Volkswagen Golf 8.5 R in de hero, het wagenpark en het reserveringsformulier
 - KvK-nummer in de footer
@@ -14,6 +15,9 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 - Uitrusting van de RS3: RS Torque Rear met drift mode, Matrix LED, virtual cockpit plus
 
 ### Gewijzigd
+- Website verplaatst naar `public/`; ongebruikte bestanden verwijderd
+- Reserveringsformulier controleert datums, naam en auto in JavaScript (datum in het verleden kwam er eerder door)
+- Donkerder grijs voor kleine tekst (WCAG AA-contrast), onderstreepte links in de footer, tabellen in de privacyverklaring met toetsenbord te bereiken
 - Privacyverklaring: de tabel in hoofdstuk 2 wordt op tablet en mobiel een lijst met blokken per situatie
 - Bedrijfsnaam "Nordmann Automotive B.V." in de footer en de bedrijfsgegevens voor zoekmachines
 - Privacyverklaring vervangen door de versie van Nordmann Automotive B.V. (5 oktober 2026): adresbewijs, uitgifte en retour, waarborgsom, GPS-tracker, dashcam, zakelijke huur, garantstelling en incasso
