@@ -91,9 +91,12 @@
 .field input:focus-visible,
 .field select:focus-visible,
 .field textarea:focus-visible { outline: 2px solid var(--c-white); outline-offset: 2px; }
-.field.is-invalid input { border-color: #ff8a8a; }
+.field.is-invalid input,
+.field.is-invalid select { border-color: #ff8a8a; }
 .field__error { display: none; font-size: 0.8125rem; color: #ffc2c2; }
 .field.is-invalid .field__error { display: block; }
+
+.booking-form [data-booking-submit]:disabled { opacity: 0.6; cursor: not-allowed; }
 
 .booking-form__note { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.65); text-align: center; }
 
