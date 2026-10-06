@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Pages configureren
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Site uploaden
         uses: actions/upload-pages-artifact@v3
