@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: HTML controleren
-        run: npx --yes htmlhint@1 "**/*.html"
+        run: npx --yes htmlhint@1 "public/**/*.html"
 
   css:
     name: CSS (Stylelint)
@@ -31,7 +31,7 @@ jobs:
         run: npm install --no-save --no-package-lock stylelint@16 stylelint-config-recommended@14
 
       - name: CSS controleren
-        run: npx stylelint "assets/css/**/*.css"
+        run: npx stylelint "public/assets/css/**/*.css"
 
   links:
     name: Links en bestanden (lychee)
@@ -44,5 +44,5 @@ jobs:
       - name: Links controleren
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --offline --no-progress --root-dir "${{ github.workspace }}" "./**/*.html" "./**/*.md"
+          args: --offline --no-progress --root-dir "${{ github.workspace }}/public" "./public/**/*.html" "./*.md" "./docs/*.md"
           fail: true

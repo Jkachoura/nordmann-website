@@ -54,4 +54,4 @@ DNS-wijzigingen zijn meestal binnen een paar uur actief, soms tot 24 uur.
 ## Alternatief: Netlify of Vercel
 
 Sleep de map naar [app.netlify.com/drop](https://app.netlify.com/drop) of koppel de GitHub-repository.
-Er is geen build-commando nodig; de publicatiemap is de hoofdmap (`.`).
+Er is geen build-commando nodig; de publicatiemap is `public`. Bij Netlify staat dat al vast in `netlify.toml`.

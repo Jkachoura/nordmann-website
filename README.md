@@ -8,64 +8,71 @@ Reserveringsaanvragen lopen via WhatsApp, dus er is geen database of backend nod
 
 ## Projectstructuur
 
+Alles wat online komt staat in `public/`. De rest is projectbeheer.
+
 ```
 .
-├── index.html               Homepage
-├── 404.html                 Pagina-niet-gevonden
-├── assets/
-│   ├── css/
-│   │   ├── tokens.css       Kleuren, typografie, ruimtes (merkwaarden)
-│   │   ├── base.css         Reset, basisstijlen, knoppen
-│   │   ├── header.css       Header en navigatie
-│   │   ├── hero.css         Hero en drie pijlers
-│   │   ├── fleet.css        Wagenpark
-│   │   ├── steps.css        Zo werkt het
-│   │   ├── booking.css      Reserveren en contact
-│   │   └── footer.css       Footer en WhatsApp-knop
-│   ├── js/
-│   │   ├── main.js          Navigatie, header, jaartal
-│   │   └── booking.js       Formulier dat een WhatsApp-bericht opstelt
-│   └── img/
-│       ├── brand/           Logo's (kleur en wit) en marmertextuur
-│       ├── cars/            Autofoto's
-│       └── icons/           Favicons en app-iconen
-├── docs/                    Deployment en werkafspraken
-├── .github/workflows/       Automatisch publiceren naar GitHub Pages
-├── CNAME                    Eigen domein voor GitHub Pages
-├── robots.txt, sitemap.xml  Vindbaarheid in Google
-└── site.webmanifest         App-icoon op telefoons
+├── public/                       De website (dit wordt gepubliceerd)
+│   ├── index.html                Homepage
+│   ├── 404.html                  Pagina niet gevonden
+│   ├── privacy/                  Privacyverklaring
+│   ├── algemene-voorwaarden/     Keuze: particulier of zakelijk
+│   ├── voorwaarden/              Algemene voorwaarden particulier
+│   ├── voorwaarden-zakelijk/     Algemene voorwaarden zakelijk
+│   ├── downloads/                Voorwaarden als pdf
+│   ├── assets/
+│   │   ├── css/                  Eén bestand per onderdeel (tokens, base, header, hero, fleet, …)
+│   │   ├── js/                   main.js (navigatie) en booking.js (reserveringsformulier)
+│   │   ├── fonts/                Montserrat, zelf gehost
+│   │   └── img/                  brand/ (logo's), icons/ (favicons), og-image.jpg
+│   ├── favicon.ico, site.webmanifest
+│   └── robots.txt, sitemap.xml
+├── tests/                        Automatische browsertests (Playwright)
+├── docs/                         Werkafspraken en publiceren
+├── .github/workflows/            Controles op pull requests en publiceren naar GitHub Pages
+├── netlify.toml                  Netlify publiceert alleen public/
+└── package.json                  Testgereedschap (alleen voor ontwikkeling)
 ```
 
 ## Lokaal bekijken
 
-Omdat de site absolute paden gebruikt (`/assets/...`), open je hem via een lokale server:
-
 ```bash
-python3 -m http.server 8000
+python -m http.server 8000 --directory public
 # open http://localhost:8000
 ```
 
 ## Een auto toevoegen
 
-1. Zet de foto in `assets/img/cars/` (liggend of staand, minimaal 1600 px breed, `.jpg`).
-2. Kopieer in `index.html` het blok `<article class="car">…</article>` en pas tekst, specificaties en foto aan.
-3. Voeg de auto toe als `<option>` in het formulier (`#bf-car`).
+1. Zet de foto in `public/assets/img/cars/` (minimaal 1600 px breed, `.jpg`).
+2. Kopieer in `public/index.html` een blok `<article class="car">…</article>` en pas tekst, specificaties en foto aan.
+3. Voeg de auto toe als `<option>` in het formulier (`#bf-car`) en als kaart in de hero (`.hero__cars`).
 
 ## Foto's plaatsen
 
-Zolang er geen eigen foto's zijn, toont de site een merkvisual (`assets/css/visual.css`).
-Vervang in `index.html` het blok `<figure class="… visual">` door de foto:
+Zolang er geen eigen foto's zijn, toont de site per auto een merkvisual (`public/assets/css/visual.css`).
+Vervang in `public/index.html` elk blok `<figure class="… visual">` door een foto:
 
 | Plek | Formaat | Voorbeeld |
 | --- | --- | --- |
-| Hero (`.hero__media`) | Liggend, breed panorama (21:9), min. 2400 px breed | `<figure class="hero__media" style="aspect-ratio: 21 / 9"><img src="/assets/img/cars/rs3-hero.jpg" alt="…"></figure>` |
-| Wagenpark (`.car__media`) | Staand (4:5), min. 1600 px hoog | `<figure class="car__media"><img src="/assets/img/cars/rs3-detail.jpg" alt="…" loading="lazy"></figure>` |
+| Hero, één kaart per auto (`.hero__media`) | Liggend (4:3), min. 1600 px breed | `<figure class="hero__media" style="aspect-ratio: 4 / 3"><img src="assets/img/cars/rs3-hero.jpg" alt="…"></figure>` |
+| Wagenpark (`.car__media`) | Staand (4:5), min. 1600 px hoog | `<figure class="car__media"><img src="assets/img/cars/rs3-detail.jpg" alt="…" loading="lazy"></figure>` |
 
 ## Algemene voorwaarden bijwerken
 
 De voorwaarden staan op `/voorwaarden/` (particulier) en `/voorwaarden-zakelijk/`, met een keuzepagina op `/algemene-voorwaarden/`.
-De pdf's in `downloads/` zijn gemaakt van de Word-documenten van Nordmann. Wijzigt de tekst, pas dan de pagina én de pdf aan,
+De pdf's in `public/downloads/` zijn gemaakt van de Word-documenten van Nordmann. Wijzigt de tekst, pas dan de pagina én de pdf aan,
 zodat beide gelijk blijven. Verhoog het versienummer en de datum bovenaan.
+
+## Testen
+
+Bij elke pull request draaien automatisch de controles (HTML, CSS, links) en de browsertests in `tests/`.
+Zelf draaien kan met Node.js:
+
+```bash
+npm install
+npx playwright install chromium
+npm test
+```
 
 ## Werkwijze
 
@@ -75,7 +82,8 @@ en [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) voor publiceren en het koppelen van 
 ## Nog te doen
 
 - [x] KvK-nummer in de footer (wettelijk verplicht)
-- [ ] Prijzen, borg en huurvoorwaarden (minimumleeftijd, rijervaring, kilometers)
+- [x] Algemene voorwaarden particulier en zakelijk
+- [ ] Tarievenlijst (de voorwaarden verwijzen ernaar)
 - [ ] Specificaties van de RS3 controleren tegen het kenteken (bouwjaar, uitvoering)
 - [ ] Eigen foto's in hoge resolutie van de RS3
 - [x] Privacyverklaring (`/privacy/`)
