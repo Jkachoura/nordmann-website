@@ -1,4 +1,4 @@
-/* Juridische pagina's (privacyverklaring): rustige leeskolom in de huisstijl */
+/* Juridische pagina's (privacyverklaring, algemene voorwaarden): rustige leeskolom in de huisstijl */
 /* Lange juridische woorden ("verwerkingsverantwoordelijke") breken af op smalle schermen */
 .legal { padding-block: var(--space-6) var(--space-7); background: var(--c-white); hyphens: auto; overflow-wrap: anywhere; }
 .legal__inner { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
@@ -69,6 +69,51 @@
   }
   .legal__table--wide td:first-child { font-size: var(--fs-400); color: var(--c-navy); }
   .legal__table--wide td:first-child::before { content: none; }
+}
+
+/* Algemene voorwaarden: genummerde leden per artikel */
+/* base.css haalt de nummering van lijsten met een class weg (ol[class]); hier is die juist nodig,
+   want de artikelen verwijzen naar elkaar ("artikel 12.2") */
+.legal__body ol.legal__list { display: grid; gap: 0.6rem; padding-left: 1.8rem; list-style: decimal; }
+.legal__list > li { padding-left: 0.3rem; color: var(--c-text-muted); }
+.legal__list > li::marker { font-weight: 600; color: var(--c-navy); }
+.legal__body .legal__sublist { display: grid; gap: 0.35rem; margin-top: 0.5rem; padding-left: 1.6rem; }
+.legal__body ol.legal__sublist { list-style: lower-alpha; }
+.legal__body ul.legal__sublist { list-style: disc; }
+
+/* Versieregel met downloadknop */
+.legal__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); }
+.legal__pdf { min-height: 2.75rem; padding: 0.6rem 1.2rem; }
+.legal__head .eyebrow a { color: inherit; text-decoration: none; }
+.legal__head .eyebrow a:hover { color: var(--c-navy); }
+
+/* Inhoudsopgave van de artikelen */
+.legal__toc { max-width: 46rem; padding: var(--space-3); border-radius: var(--radius-m); background: var(--c-mist); }
+.legal__toc-title { margin-bottom: var(--space-1); font-size: 0.75rem; font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--c-steel); }
+.legal__toc ol { columns: 2 16rem; column-gap: var(--space-4); padding-left: 1.8rem; list-style: decimal; font-size: var(--fs-300); }
+.legal__toc li { break-inside: avoid; padding-block: 0.2rem; color: var(--c-steel); }
+.legal__toc a { color: var(--c-navy); font-weight: 500; text-decoration: none; }
+.legal__toc a:hover { text-decoration: underline; }
+.legal__body section[id^="artikel-"] { scroll-margin-top: calc(var(--header-h) + var(--space-2)); }
+
+/* Keuzepagina: particulier of zakelijk */
+.terms-choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); max-width: 60rem; }
+.terms-choice__item {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-m);
+}
+.terms-choice__label { font-size: 0.75rem; font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--c-steel); }
+.terms-choice__title { font-size: var(--fs-600); font-weight: 700; line-height: 1.15; color: var(--c-navy); }
+.terms-choice__text { color: var(--c-text-muted); }
+.terms-choice__actions { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: var(--space-2); }
+
+@media (max-width: 52rem) {
+  .terms-choice { grid-template-columns: 1fr; }
+  .terms-choice__item { padding: var(--space-3); }
 }
 
 @media (max-width: 30rem) {

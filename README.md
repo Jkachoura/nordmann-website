@@ -61,6 +61,12 @@ Vervang in `index.html` het blok `<figure class="… visual">` door de foto:
 | Hero (`.hero__media`) | Liggend, breed panorama (21:9), min. 2400 px breed | `<figure class="hero__media" style="aspect-ratio: 21 / 9"><img src="/assets/img/cars/rs3-hero.jpg" alt="…"></figure>` |
 | Wagenpark (`.car__media`) | Staand (4:5), min. 1600 px hoog | `<figure class="car__media"><img src="/assets/img/cars/rs3-detail.jpg" alt="…" loading="lazy"></figure>` |
 
+## Algemene voorwaarden bijwerken
+
+De voorwaarden staan op `/voorwaarden/` (particulier) en `/voorwaarden-zakelijk/`, met een keuzepagina op `/algemene-voorwaarden/`.
+De pdf's in `downloads/` zijn gemaakt van de Word-documenten van Nordmann. Wijzigt de tekst, pas dan de pagina én de pdf aan,
+zodat beide gelijk blijven. Verhoog het versienummer en de datum bovenaan.
+
 ## Werkwijze
 
 Zie [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) voor branches en commitberichten,
