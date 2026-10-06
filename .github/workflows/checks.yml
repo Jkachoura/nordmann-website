@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Code ophalen
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: HTML controleren
         run: npx --yes htmlhint@1 "public/**/*.html"
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Code ophalen
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # Lokaal installeren: stylelint zoekt de config vanaf de projectmap, niet in de npx-cache
       - name: Stylelint installeren
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Code ophalen
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # Alleen interne links: social media blokkeert bots en zou willekeurig falen
       - name: Links controleren
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Code ophalen
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Node.js installeren
         uses: actions/setup-node@v4
