@@ -62,7 +62,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   font-weight: 600;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--c-steel);
+  color: var(--c-steel-text);
 }
 .eyebrow::before { content: ""; width: 2rem; height: 2px; background: currentColor; }
 .eyebrow--light { color: rgba(255, 255, 255, 0.7); }

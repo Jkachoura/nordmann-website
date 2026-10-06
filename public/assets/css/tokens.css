@@ -6,6 +6,7 @@
   --c-navy-deep: #0c1440;   /* donker marmer */
   --c-navy-ink: #0e1430;    /* tekst */
   --c-steel: #7f8585;       /* grijs uit het logo */
+  --c-steel-text: #666b6b;  /* iets donkerder logogrijs voor kleine tekst (WCAG AA: 5,4:1 op wit) */
   --c-mist: #f1f1f1;        /* achtergrond van het logo */
   --c-white: #ffffff;
   --c-line: rgba(21, 36, 121, 0.14);

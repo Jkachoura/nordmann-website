@@ -36,7 +36,7 @@
   font-weight: 600;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--c-steel);
+  color: var(--c-steel-text);
 }
 /* Typenaam groot en strak, als een modelaanduiding op de achterklep */
 .car__name {
@@ -75,7 +75,7 @@
   font-weight: 600;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--c-steel);
+  color: var(--c-steel-text);
 }
 .features { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: var(--space-2); }
 .features li {
