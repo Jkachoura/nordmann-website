@@ -6,6 +6,7 @@ Formaat volgens [Keep a Changelog](https://keepachangelog.com/nl/1.1.0/), versie
 ## [Unreleased]
 
 ### Toegevoegd
+- Algemene voorwaarden: keuzepagina (/algemene-voorwaarden/) met particulier (/voorwaarden/) en zakelijk (/voorwaarden-zakelijk/), elk als pdf te downloaden; link in de footer
 - Volkswagen Golf 8.5 R in de hero, het wagenpark en het reserveringsformulier
 - KvK-nummer in de footer
 - Privacyverklaring op /privacy/, gelinkt vanuit de footer en het reserveringsformulier
